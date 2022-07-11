@@ -4,7 +4,7 @@ import "./App.css";
 export default function App() {
   const [name, setName] = React.useState<string>("");
   const [age, setAge] = React.useState<string | undefined>("");
-  const [color, setColor] = React.useState<string | undefined>("red");
+  const [color, setColor] = React.useState<string | undefined>("Red");
 
   const changeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
