@@ -10,7 +10,8 @@ body {
   display: block;
 }
 
-input,
+input:not([type="radio"]), 
+/*select all input element excluding except those which type is set to  */
 select {
   width: 100%;
 }
