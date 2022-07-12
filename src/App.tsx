@@ -1,3 +1,4 @@
+import { setDefaultResultOrder } from "dns";
 import * as React from "react";
 import "./App.css";
 
@@ -57,13 +58,11 @@ export default function App() {
               Clear
             </button>
           </form>
-          <div>
-            <div className="w-50 pa-16">
-              <p className="print">
-                {name} is {age} years old, and {is_male ? "he" : "she"} likes{" "}
-                {color} color.
-              </p>
-            </div>
+          <div className="w-50 pa-16">
+            <p className="print">
+              {name} is {age} years old, and {is_male ? "he" : "she"} likes{" "}
+              {color} color.
+            </p>
           </div>
         </div>
       </div>
