@@ -10,14 +10,17 @@ body {
   display: block;
 }
 
-input:not([type="radio"]), 
-/*select all input element excluding except those which type is set to  */
+/* input:not([type="radio"]), 
+select all input element excluding except those which type is set to  */
+input,
 select {
   width: 100%;
 }
 
 .d-flex {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .v-center {
@@ -37,19 +40,32 @@ select {
 }
 
 .btn-primary {
-  background-color: green;
+  background-color: rgb(3, 160, 3);
   color: white;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .btn-secondary {
-  background-color: grey;
+  background-color: rgb(94, 86, 86);
   color: white;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .w-50 {
   width: 50%;
+  min-width: 250px;
 }
 
 button {
   width: 100%;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.print {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: center;
 }

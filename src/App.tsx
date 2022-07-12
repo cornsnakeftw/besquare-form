@@ -7,6 +7,7 @@ export default function App() {
   const [color, setColor] = React.useState<string | undefined>("Red");
   const [gender, setGender] = React.useState<string | undefined>("Male");
 
+  const is_male = gender === "male";
   const changeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
@@ -28,18 +29,44 @@ export default function App() {
     console.log(name, gender, age, color);
   };
 
+  const reset = () => {
+    setName("");
+    setAge("");
+    setColor("");
+    setGender("");
+  };
+
   return (
     <div className="pa-16">
-      <form onSubmit={handleSubmit}>
-        <Input name="Name" value={name} onChange={changeName} />
-        <Radio name="Gender" onChange={changeGender} />
-        <Input name="Age" value={age} onChange={changeAge} />
-        <Select name="Favourite Color" value={color} onChange={changeColor} />
-        <button type="submit" className="btn-primary mb-16">
-          Submit
-        </button>
-        <button className="btn-secondary">Clear</button>
-      </form>
+      <div className="d-flex v-center h-center">
+        <div className="w-50">
+          <h2>Fill the Form!</h2>
+          <form onSubmit={handleSubmit}>
+            <Input name="Name" value={name} onChange={changeName} />
+            <Radio name="Gender" onChange={changeGender} />
+            <Input name="Age" value={age} onChange={changeAge} />
+            <Select
+              name="Favourite Color"
+              value={color}
+              onChange={changeColor}
+            />
+            <button type="submit" className="btn-primary mb-16">
+              Submit
+            </button>
+            <button onClick={reset} className="btn-secondary">
+              Clear
+            </button>
+          </form>
+          <div>
+            <div className="w-50 pa-16">
+              <p className="print">
+                {name} is {age} years old, and {is_male ? "he" : "she"} likes{" "}
+                {color} color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -71,7 +98,16 @@ const Select = ({ value, onChange, name }: SelectType) => {
       <label>{name}</label>
       <select value={value} onChange={onChange}>
         <option value="red">Red</option>
+        <option value="green">Green</option>
         <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+        <option value="pink">Pink</option>
+        <option value="cyan">Cyan</option>
+        <option value="grey">Grey</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="skyblue">Skyblue</option>
       </select>
     </div>
   );
